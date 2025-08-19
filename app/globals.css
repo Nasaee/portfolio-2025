@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 body {
   overflow-x: hidden;
@@ -19,14 +19,16 @@ section {
 }
 
 .font-poppins {
-  font-family: var(--font-poppins), system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-poppins), system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
 }
 
 .font-kanit {
-  font-family: var(--font-kanit), system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-kanit), system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
 }
+
+/* HeroSection.module.css */
 
 @layer utilities {
   .custom-text-gradient {
@@ -51,4 +53,19 @@ section {
   .animate-textclip {
     animation: textclip 2s linear infinite;
   }
+
+  /* typing cursor on hero selection */
+  .type::after {
+    content: '|';
+    color: #6741d9;
+    margin-left: 0.125rem;
+    animation: blink 1s steps(1, end) infinite; /* กระพริบ */
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  /* ---------------------------------- */
 }
