@@ -31,7 +31,7 @@ export default function RootLayout({
     // กัน hydration warning
     <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.variable} ${kanit.variable} antialiased`}>
-        <LangFontProvider>{children}</LangFontProvider>
+        {children}
       </body>
     </html>
   );
