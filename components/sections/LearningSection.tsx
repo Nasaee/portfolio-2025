@@ -1,15 +1,15 @@
 'use client';
 
+import { useLangStore } from '@/store/useLangStore';
 import { useEffect, useRef } from 'react';
 import SectionTitle from '../SectionTitle';
-import { skills } from '@/data/skillsData';
-import Tilt from 'react-parallax-tilt';
+import { learning } from '@/data/skillsData';
+import Tilt from '../TiltClient';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useLangStore } from '@/store/useLangStore';
 
-function SkillsSection() {
+const LearningSection = () => {
   const lang = useLangStore((s) => s.lang);
   const sectionRef = useRef<HTMLLIElement>(null);
   const skillsRef = useRef<HTMLLIElement[]>([]);
@@ -70,18 +70,17 @@ function SkillsSection() {
 
   return (
     <section
-      id='skills'
       ref={sectionRef}
-      className='min-h-screen relative overflow-hidden bg-gradient-to-b from-black to-[#9a74cf50] pb-36'
+      className='relative overflow-hidden pb-5 bg-gradient-to-b from-[#9a74cf50] to-black py-32'
     >
       <SectionTitle
         sectionRef={sectionRef}
-        text={lang === 'en' ? 'My Skills' : 'ทักษะของฉัน'}
+        text={lang === 'en' ? 'Learning' : 'กำลังเรียนรู้'}
       />
 
       <div className='container mx-auto mt-16'>
         <ul className='grid grid-cols-3 lg:grid-cols-4 place-items-center gap-2'>
-          {skills.map((skill) => {
+          {learning.map((skill) => {
             const { skillIcon, id, skillName } = skill;
             return (
               <li
@@ -107,6 +106,6 @@ function SkillsSection() {
       </div>
     </section>
   );
-}
+};
 
-export default SkillsSection;
+export default LearningSection;

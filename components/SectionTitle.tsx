@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 interface SectionTitleProps {
-  sectionRef: RefObject<HTMLDivElement | null>;
+  sectionRef: RefObject<HTMLLIElement | HTMLDivElement | null>;
   text: string;
 }
 
@@ -17,15 +17,15 @@ function SectionTitle({ sectionRef, text }: SectionTitleProps) {
 
     gsap.fromTo(
       titleRef.current,
-      { y: 100, opacity: 0 },
+      { y: 50, opacity: 0 },
 
       {
-        y: -300,
+        y: 0,
         opacity: 1,
         duration: 0.8,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 40%',
+          start: 'top 70%',
           toggleActions: 'play none none reverse',
         },
       }
