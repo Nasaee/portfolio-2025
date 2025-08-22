@@ -7,7 +7,6 @@ import SkillsSection from '@/components/sections/SkillsSection';
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import LearningSection from '@/components/sections/LearningSection';
 import ProjectSection from '@/components/sections/ProjectSection';
 import Footer from '@/components/Footer';
 
@@ -30,7 +29,7 @@ function HomePage() {
       <LangFontProvider>
         <HeroSection />
         <SkillsSection />
-        <LearningSection />
+
         <ProjectSection />
       </LangFontProvider>
       <Footer />

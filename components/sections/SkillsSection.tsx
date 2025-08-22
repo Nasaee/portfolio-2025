@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import SectionTitle from '../SectionTitle';
-import { skills } from '@/data/skillsData';
+import { learning, skills } from '@/data/skillsData';
 import Tilt from 'react-parallax-tilt';
 import Image from 'next/image';
 import { gsap } from 'gsap';
@@ -13,6 +13,7 @@ function SkillsSection() {
   const lang = useLangStore((s) => s.lang);
   const sectionRef = useRef<HTMLLIElement>(null);
   const skillsRef = useRef<HTMLLIElement[]>([]);
+  const learningRef = useRef<HTMLHeadingElement>(null);
 
   const addToSkills = (el: HTMLLIElement | null) => {
     if (el && !skillsRef.current.includes(el)) {
@@ -63,6 +64,25 @@ function SkillsSection() {
         // ถ้าอยากให้เลื่อนลงจนพ้นจอแล้วรีเซ็ตด้วย ก็เพิ่ม onLeave ตรงนี้ได้
         onLeave: (els) => gsap.set(els, { y: 50, opacity: 0 }),
       });
+
+      if (learningRef.current) {
+        gsap.fromTo(
+          learningRef.current,
+          { y: 20, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: learningRef.current,
+              start: 'top 80%',
+              // ถ้าอยากให้เล่นครั้งเดียวใช้: 'play none none none'
+              toggleActions: 'play none none reverse',
+            },
+          }
+        );
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -104,6 +124,39 @@ function SkillsSection() {
             );
           })}
         </ul>
+      </div>
+
+      <div className='py-32 mt-24'>
+        <h2 ref={learningRef} className='text-center text-4xl tracking-wider'>
+          {lang === 'en' ? 'Learning' : 'กำลังเรียนรู้'}
+        </h2>
+
+        <div className='container mx-auto mt-16'>
+          <ul className='grid grid-cols-3 lg:grid-cols-4 place-items-center gap-2'>
+            {learning.map((skill) => {
+              const { skillIcon, id, skillName } = skill;
+              return (
+                <li
+                  key={id}
+                  ref={addToSkills}
+                  className='mt-10 p-4 transition-all duration-300 hover:scale-[1.2]'
+                >
+                  <Tilt>
+                    <a
+                      href={skill.link}
+                      target='_blank'
+                      rel='noreferrer'
+                      className='flex flex-col items-center gap-4'
+                    >
+                      <Image src={skillIcon} alt={skill.skillName} width={80} />
+                      <p className='text-lg tracking-wider'>{skillName}</p>
+                    </a>
+                  </Tilt>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
       </div>
     </section>
   );

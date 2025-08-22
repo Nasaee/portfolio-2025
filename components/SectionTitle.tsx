@@ -7,9 +7,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 interface SectionTitleProps {
   sectionRef: RefObject<HTMLLIElement | HTMLDivElement | null>;
   text: string;
+  className?: string;
 }
 
-function SectionTitle({ sectionRef, text }: SectionTitleProps) {
+function SectionTitle({ sectionRef, text, className }: SectionTitleProps) {
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
