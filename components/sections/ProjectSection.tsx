@@ -67,6 +67,7 @@ const ProjectSection = () => {
 
   return (
     <section
+      id='projects'
       ref={sectionRef}
       className='min-h-screen relative overflow-hidden pb-5 bg-gradient-to-b from-[#9a74cf50] to-violet-400 py-32'
     >
