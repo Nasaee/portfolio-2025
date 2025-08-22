@@ -29,7 +29,6 @@ function HomePage() {
       <LangFontProvider>
         <HeroSection />
         <SkillsSection />
-
         <ProjectSection />
       </LangFontProvider>
       <Footer />

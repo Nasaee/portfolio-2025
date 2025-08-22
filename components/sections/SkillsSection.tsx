@@ -68,7 +68,7 @@ function SkillsSection() {
       if (learningRef.current) {
         gsap.fromTo(
           learningRef.current,
-          { y: 20, opacity: 0 },
+          { y: 40, opacity: 0 },
           {
             y: 0,
             opacity: 1,
@@ -126,7 +126,7 @@ function SkillsSection() {
         </ul>
       </div>
 
-      <div className='py-32 mt-24'>
+      <div className=' mt-36'>
         <h2 ref={learningRef} className='text-center text-4xl tracking-wider'>
           {lang === 'en' ? 'Learning' : 'กำลังเรียนรู้'}
         </h2>

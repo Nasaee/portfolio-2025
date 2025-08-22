@@ -34,7 +34,7 @@ import {
   ginImg,
 
   // goImg,
-} from '../public/skills';
+} from '../assets/skills';
 
 const skills = [
   {
