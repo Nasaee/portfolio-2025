@@ -2,13 +2,14 @@
 
 import HeroSection from '@/components/sections/HeroSection';
 import Navbar from '@/components/Navbar';
-import LangFontProvider from '@/components/wrappers/LangFontProvider';
 import SkillsSection from '@/components/sections/SkillsSection';
 import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ProjectSection from '@/components/sections/ProjectSection';
 import Footer from '@/components/Footer';
+import About from '@/components/sections/About';
+import LangFontProvider from '@/components/wrappers/LangFontProvider';
 
 function HomePage() {
   useEffect(() => {
@@ -28,6 +29,7 @@ function HomePage() {
       <Navbar />
       <LangFontProvider>
         <HeroSection />
+        <About />
         <SkillsSection />
         <ProjectSection />
       </LangFontProvider>

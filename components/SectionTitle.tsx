@@ -3,14 +3,21 @@
 import { RefObject, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { cn } from '@/utils/utils';
 
 interface SectionTitleProps {
   sectionRef: RefObject<HTMLLIElement | HTMLDivElement | null>;
   text: string;
-  className?: string;
+  containerClassName?: string;
+  textClassName?: string;
 }
 
-function SectionTitle({ sectionRef, text, className }: SectionTitleProps) {
+function SectionTitle({
+  sectionRef,
+  text,
+  containerClassName,
+  textClassName,
+}: SectionTitleProps) {
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
@@ -40,10 +47,18 @@ function SectionTitle({ sectionRef, text, className }: SectionTitleProps) {
     };
   }, [sectionRef]);
   return (
-    <div className='container mx-auto px-4 h-full flex flex-col items-center justify-center'>
+    <div
+      className={cn(
+        'container mx-auto px-4 h-full flex flex-col items-center justify-center',
+        containerClassName
+      )}
+    >
       <h1
         ref={titleRef}
-        className='text-4xl md:text-6xl font-bold sm:mb-16 text-center text-white opacity-0 tracking-wider'
+        className={cn(
+          'text-4xl md:text-6xl font-bold sm:mb-16 text-center text-white opacity-0 tracking-wider pt-2',
+          textClassName
+        )}
       >
         {text}
       </h1>

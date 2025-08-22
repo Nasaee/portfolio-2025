@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Poppins, Kanit } from 'next/font/google';
+import { Kanit, Poppins } from 'next/font/google';
 import './globals.css';
 import LangFontProvider from '@/components/wrappers/LangFontProvider';
 
@@ -15,7 +15,6 @@ const kanit = Kanit({
   variable: '--font-kanit',
   weight: ['400', '500', '600', '700', '800', '900'],
   subsets: ['thai'],
-  // ผู้ใช้จะเห็น text ทันที (ด้วย fallback font เช่น Arial, system-ui) แล้วพอ Poppins/Kanit โหลดเสร็จ → browser จะ สลับ (swap) ไปใช้ฟอนต์จริง
   display: 'swap',
 });
 

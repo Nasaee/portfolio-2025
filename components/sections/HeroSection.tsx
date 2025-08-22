@@ -9,14 +9,22 @@ const textLang = {
   en: {
     headerGreetText: "Hi I'm ",
     name: 'Nasaee',
-    subHeader:
-      "I'm a full-stack developer with a strong passion for building modern, responsive, and user-friendly web applications. My expertise includes React, Node.js, and other cutting-edge web technologies. I enjoy creating clean, efficient solutions and I’m always learning to stay ahead of industry trends. Let’s collaborate and bring your ideas to life!",
+    subHeader1:
+      'a full-stack developer with a passion for turning ideas into real, interactive web experiences.',
+    subHeader2:
+      'I graduated from the Faculty of Arabic Arts in Malaysia, but my curiosity and creativity led me into the world of programming. What started as a hobby — writing code — quickly became a career path that I truly love.',
+    subHeader3:
+      'I enjoy learning new technologies and constantly expanding my toolkit. My journey began with JavaScript, TypeScript, React, HTML, and CSS, and has since grown into a full-stack skillset that covers everything from frontend frameworks to backend development, databases, and DevOps tools.',
   },
   th: {
-    headerGreetText: "Hi I'm ",
-    name: 'Nasaee',
-    subHeader:
-      'ฉันเป็นนักพัฒนาแบบ Full-Stack Developer ที่มีความมุ่งมั่นอย่างแรงกล้าในการสร้างเว็บแอปพลิเคชันที่ทันสมัย ตอบสนองฉับไว และใช้งานง่าย ความเชี่ยวชาญของฉันครอบคลุม React, Node.js และเทคโนโลยีเว็บล้ำสมัยอื่นๆ ฉันชอบสร้างสรรค์โซลูชันที่สะอาดตาและมีประสิทธิภาพ และกำลังเรียนรู้อยู่เสมอเพื่อก้าวล้ำนำหน้าเทรนด์ในอุตสาหกรรม มาร่วมมือกันและนำไอเดียของคุณมาสร้างสรรค์ให้เป็นจริง!',
+    headerGreetText: 'สวัสดี ผมชื่อ ',
+    name: 'นาซาอี',
+    subHeader1:
+      'ผมเป็น Full-Stack Developer ที่มีความหลงใหลในการสร้างเว็บไซต์และแอปพลิเคชันที่ทันสมัย ตอบสนองไว และใช้งานง่าย',
+    subHeader2:
+      'ผมจบการศึกษาจาก คณะอักษรศาสตร์อาหรับ ประเทศมาเลเซีย แต่ความสนใจในการเขียนโค้ดทำให้ผมหันมาศึกษาและพัฒนาทักษะด้านการเขียนโปรแกรมอย่างจริงจัง จากงานอดิเรกกลายมาเป็นเส้นทางอาชีพที่ผมรักและมุ่งมั่น',
+    subHeader3:
+      'ผมสนุกกับการเรียนรู้เทคโนโลยีใหม่ ๆ อยู่เสมอ และเริ่มต้นจาก JavaScript, TypeScript, React, HTML และ CSS ก่อนจะขยายไปสู่การพัฒนาแบบเต็มสแต็ก ทั้ง Frontend, Backend, Database และ DevOps',
   },
 };
 
@@ -39,7 +47,7 @@ function HeroSection() {
               delay: 1.3,
               duration: 1.5,
             }}
-            className='text-4xl md:text-7xl lg:text-8xl font-bold z-10 mb-6 lg:tracking-wider'
+            className='text-4xl md:text-7xl lg:text-8xl font-bold z-10 mb-8 md:mb-10 lg:mb-12 lg:tracking-wider'
           >
             {textData.headerGreetText}
             {/* typing text */}
@@ -50,11 +58,11 @@ function HeroSection() {
                 1000,
                 textData.name,
                 2000,
-                '',
-                3000,
-                'Fullstack Developer',
-                4000,
-                '',
+                // '',
+                // 3000,
+                // 'Fullstack Developer',
+                // 4000,
+                // '',
               ]}
               wrapper='span'
               cursor={false} // close default cursor, custom manually on global css
@@ -65,7 +73,7 @@ function HeroSection() {
             <span className='lg:hidden'>{textData.name}</span>
           </motion.h1>
 
-          <motion.p
+          <motion.div
             initial={{ opacity: 0, y: 80 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -75,10 +83,12 @@ function HeroSection() {
               delay: 1.8,
               duration: 1.5,
             }}
-            className='text-md md:text-1xl lg:text-2xl text-purple-200 max-w-2xl'
+            className='flex flex-col space-y-6 text-md md:text-1xl lg:text-2xl text-purple-100 max-w-3xl leading-relaxed'
           >
-            {textData.subHeader}
-          </motion.p>
+            <p>{textData.subHeader1}</p>
+            <p>{textData.subHeader2}</p>
+            <p>{textData.subHeader3}</p>
+          </motion.div>
         </div>
         {/* Right Section */}
         <Spline

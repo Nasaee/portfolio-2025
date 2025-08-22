@@ -92,7 +92,7 @@ function SkillsSection() {
     <section
       id='skills'
       ref={sectionRef}
-      className='min-h-screen relative overflow-hidden bg-gradient-to-b from-black to-[#9a74cf50] pb-36'
+      className='min-h-screen relative overflow-hidden bg-gradient-to-b from-[#9a74cf50] to-black pt-14 pb-36 '
     >
       <SectionTitle
         sectionRef={sectionRef}
