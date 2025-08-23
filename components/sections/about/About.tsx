@@ -1,12 +1,13 @@
-import { Lang, useLangStore } from '@/store/useLangStore';
-import { ReactNode, useEffect, useRef } from 'react';
-import SectionTitle from '../SectionTitle';
+import { useLangStore } from '@/store/useLangStore';
+import { useEffect, useRef } from 'react';
+import SectionTitle from '../../SectionTitle';
 import Image from 'next/image';
 import { personalInfo } from '@/data/personalInfo';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { BiSolidFilePdf } from 'react-icons/bi';
-import { BsArrowRightCircleFill } from 'react-icons/bs';
+import ResumeButton from './ResumeButton';
+import TranscriptButton from './TranscriptButton';
+import CertificateButton from './CertificateButton';
 const About = () => {
   const lang = useLangStore((s) => s.lang);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -45,7 +46,7 @@ const About = () => {
     <div
       id='about'
       ref={sectionRef}
-      className='min-h-screen relative overflow-hidden bg-gradient-to-b from-black to-[#9a74cf50] pb-36'
+      className='min-h-screen  overflow-hidden bg-gradient-to-b from-black to-[#9a74cf50] pb-36'
     >
       <SectionTitle
         sectionRef={sectionRef}
@@ -95,23 +96,10 @@ const About = () => {
       </div>
 
       {/* button  */}
-      <div className='container flex justify-center items-center flex-col lg:flex-row lg:justify-end gap-5 lg:gap-8 mt-36 px-4'>
-        <CardButton
-          text='Resume'
-          icon={<BiSolidFilePdf size={30} className='text-red-500' />}
-          onClick={() => {}}
-        />
-        <CardButton
-          text={lang === 'en' ? 'Transcript' : 'ใบประกาศนียบัตร'}
-          icon={<BiSolidFilePdf size={30} className='text-red-500' />}
-          onClick={() => {}}
-        />
-
-        <CardButton
-          text={lang === 'en' ? 'Certificate' : 'ใบรับรอง'}
-          icon={<BsArrowRightCircleFill size={30} className='text-gray-200' />}
-          onClick={() => {}}
-        />
+      <div className='container mx-auto flex justify-center items-center flex-col lg:flex-row lg:justify-end gap-5 lg:gap-8 mt-36 px-4'>
+        <ResumeButton />
+        <TranscriptButton />
+        <CertificateButton />
       </div>
     </div>
   );
@@ -125,22 +113,5 @@ const LabelValue = ({ label, value }: { label: string; value: string }) => {
       <span className='font-semibold text-nowrap tracking-wide'>{label}: </span>
       <span>{value}</span>
     </div>
-  );
-};
-
-const CardButton = ({
-  text,
-  icon,
-  onClick,
-}: {
-  text: string;
-  icon: ReactNode;
-  onClick: () => void;
-}) => {
-  return (
-    <button className='flex items-center justify-center gap-3 py-3 px-6 bg-gradient-to-br from-violet-700 to-violet-900 rounded-sm cursor-pointer w-full lg:w-[250px] tracking-wider hover:scale-110 transition-all duration-300'>
-      {icon}
-      <p className='text-lg'>{text}</p>
-    </button>
   );
 };

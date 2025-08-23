@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Kanit, Poppins } from 'next/font/google';
 import './globals.css';
-import LangFontProvider from '@/components/wrappers/LangFontProvider';
 
 const poppins = Poppins({
   variable: '--font-poppins',
@@ -21,6 +20,11 @@ const kanit = Kanit({
 export const metadata: Metadata = {
   title: 'Nasaee Portfolio',
   description: 'A portfolio showcasing my work and skills.',
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png', // สำหรับ browser ที่ยังใช้ shortcut
+    apple: '/favicon.png', // สำหรับ iOS (home screen icon)
+  },
 };
 
 export default function RootLayout({

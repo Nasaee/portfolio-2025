@@ -8,7 +8,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ProjectSection from '@/components/sections/ProjectSection';
 import Footer from '@/components/Footer';
-import About from '@/components/sections/About';
+import About from '@/components/sections/about/About';
 import LangFontProvider from '@/components/wrappers/LangFontProvider';
 
 function HomePage() {
