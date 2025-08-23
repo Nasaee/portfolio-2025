@@ -108,7 +108,7 @@ function Navbar() {
               stiffness: 100,
               damping: 15,
             }}
-            className='ml-4 px-4 py-2 rounded-xl bg-gradient-to-r from-gray-400 to-gray-100 text-violet-700 font-bold hover:bg-[linear-gradient(to_right,#6758c5,#ae67fa,#f49867)] hover:text-white transition-all duration-500'
+            className='ml-4 px-4 py-2 rounded-xl bg-gradient-to-br from-violet-500 to-violet-800 text-white font-bold hover:bg-[linear-gradient(to_right,#6758c5,#ae67fa,#f49867)] hover:text-white transition-all duration-500'
           >
             Hire Me
           </motion.a>

@@ -64,7 +64,8 @@ const About = () => {
         />
         {/* Contents */}
         <div ref={infoRef}>
-          <h3 className='text-3xl leading-relaxed tracking-wide max-w-4xl bg-gradient-to-r from-violet-600 via-[#ae67fa] to-[#f49867] bg-clip-text text-transparent'>
+          <h3 className='text-3xl leading-relaxed tracking-wide max-w-4xl bg-gradient-to-br from-white to-gray-200 bg-clip-text text-transparent'>
+            {/* <h3 className='text-3xl leading-relaxed tracking-wide max-w-4xl bg-gradient-to-r from-violet-600 via-[#ae67fa] to-[#f49867] bg-clip-text text-transparent'> */}
             {data.intro}
           </h3>
 
