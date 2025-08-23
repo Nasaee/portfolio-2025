@@ -78,7 +78,7 @@ const TranscriptButton = () => {
     const ac = new AbortController();
     (async () => {
       try {
-        const res = await fetch('/resume.pdf', {
+        const res = await fetch('/transcript.pdf', {
           method: 'HEAD',
           cache: 'no-store',
           signal: ac.signal,
@@ -142,7 +142,7 @@ const TranscriptButton = () => {
     try {
       iframeRef.current?.contentWindow?.print();
     } catch {
-      window.open('/resume.pdf', '_blank', 'noopener,noreferrer');
+      window.open('/transcript.pdf', '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -153,7 +153,7 @@ const TranscriptButton = () => {
   return (
     <>
       <CardButton
-        text='Resume'
+        text='Transcript'
         icon={<BiSolidFilePdf size={30} className='text-red-500' />}
         onClick={() => setOpen(true)}
       />
@@ -180,7 +180,7 @@ const TranscriptButton = () => {
                 <BiDownload /> Download
               </a>
               <a
-                href='/resume.pdf'
+                href='/transcript.pdf'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='inline-flex items-center gap-2 rounded-lg border border-black/10 px-2.5 py-1.5 text-sm hover:bg-black/5 active:scale-95 dark:border-white/10 dark:hover:bg-white/5'
@@ -235,14 +235,14 @@ const TranscriptButton = () => {
                   </p>
                   <div className='flex items-center justify-center gap-2'>
                     <a
-                      href='/resume.pdf'
+                      href='/transcript.pdf'
                       download
                       className='rounded-lg bg-black px-4 py-2 text-sm text-white hover:opacity-90 dark:bg-white dark:text-black'
                     >
                       ดาวน์โหลดไฟล์
                     </a>
                     <a
-                      href='/resume.pdf'
+                      href='/transcript.pdf'
                       target='_blank'
                       rel='noopener noreferrer'
                       className='rounded-lg border px-4 py-2 text-sm hover:bg-black/5 dark:border-white/20 dark:hover:bg-white/10'
@@ -259,7 +259,7 @@ const TranscriptButton = () => {
               <iframe
                 ref={iframeRef}
                 src={`/transcript.pdf${isMobile ? '' : '#toolbar=0'}`} // ปิดทูลบาร์ native บางตัว
-                title='Resume PDF'
+                title='Transcript PDF'
                 className='absolute inset-0 block h-full w-full'
                 loading='eager'
                 onLoad={onPdfLoaded}

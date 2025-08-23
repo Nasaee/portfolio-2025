@@ -129,15 +129,6 @@ const ResumeButton = () => {
     }
   };
 
-  const onPdfError = () => {
-    // mark fail เฉพาะยังเป็น run ปัจจุบันและยังไม่ loaded
-    if (!loadedRef.current) setFailed(true);
-    if (loadTimerRef.current) {
-      clearTimeout(loadTimerRef.current);
-      loadTimerRef.current = null;
-    }
-  };
-
   const handlePrint = () => {
     try {
       iframeRef.current?.contentWindow?.print();
