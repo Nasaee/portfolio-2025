@@ -109,7 +109,7 @@ export default About;
 
 const LabelValue = ({ label, value }: { label: string; value: string }) => {
   return (
-    <div className='flex flex-col md:flex-row gap-4 text-2xl lg:text-3xl text-gray-100'>
+    <div className='flex gap-4 text-2xl lg:text-3xl text-gray-100'>
       <span className='font-semibold text-nowrap tracking-wide'>{label}: </span>
       <span>{value}</span>
     </div>

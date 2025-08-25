@@ -10,6 +10,7 @@ import ProjectSection from '@/components/sections/ProjectSection';
 import Footer from '@/components/Footer';
 import About from '@/components/sections/about/About';
 import LangFontProvider from '@/components/wrappers/LangFontProvider';
+import ContactSection from '@/components/sections/ContactSection';
 
 function HomePage() {
   useEffect(() => {
@@ -32,6 +33,7 @@ function HomePage() {
         <About />
         <SkillsSection />
         <ProjectSection />
+        <ContactSection />
       </LangFontProvider>
       <Footer />
     </div>

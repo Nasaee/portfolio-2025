@@ -57,7 +57,10 @@ function Navbar() {
                 damping: 20,
                 delay: 0.7 + index * 0.2,
               }}
-              className='relative text-gray-200 hover:bg-gradient-to-r hover:from-[#5f3dc4] hover:via-[#ae67fa] hover:to-[#f49867] hover:bg-clip-text hover:text-transparent font-medium transition-colors duration-300 group'
+              className='relative text-gray-200
+    hover:bg-gradient-to-r hover:from-[#5f3dc4] hover:via-[#ae67fa] hover:to-[#f49867]
+    hover:bg-clip-text hover:text-transparent
+    font-medium transition-colors duration-300 group'
               href={`#${item.toId}`}
             >
               {item.name}
@@ -75,7 +78,7 @@ function Navbar() {
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.3, duration: 0.8 }}
-                className='text-gray-700 dark:text-gray-300 hover:text-violet-600  transition-colors duration-300'
+                className='text-gray-700 dark:text-gray-300 hover:text-violet-300  transition-colors duration-300'
                 href={item.link}
               >
                 <item.Icon className='w-5 h-5' />
@@ -105,7 +108,7 @@ function Navbar() {
               stiffness: 100,
               damping: 15,
             }}
-            className='ml-4 px-4 py-2 rounded-xl bg-gradient-to-br from-violet-500 to-violet-800 text-white font-bold hover:bg-[linear-gradient(to_right,#6758c5,#ae67fa,#f49867)] hover:text-white transition-all duration-500'
+            className='ml-4 px-4 py-2 rounded-xl bg-gradient-to-br from-violet-500 to-violet-800 text-white font-bold hover:scale-110 hover:shadow-lg transition-all duration-300'
           >
             Hire Me
           </motion.a>
