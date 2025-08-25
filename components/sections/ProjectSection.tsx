@@ -12,7 +12,7 @@ const ProjectSection = () => {
     <section
       id='projects'
       ref={sectionRef}
-      className='min-h-screen relative overflow-hidden pb-5 bg-gradient-to-b from-black to-violet-400 py-32'
+      className='min-h-screen relative overflow-hidden pb-5 bg-gradient-to-b from-violet-800 to-black py-32'
     >
       <SectionTitle
         sectionRef={sectionRef}

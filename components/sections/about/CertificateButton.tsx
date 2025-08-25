@@ -65,7 +65,7 @@ const CertificateButton = () => {
           className={cn(
             'absolute inset-0', // 👈 กินเต็มทั้งจอแน่นอน
             'bg-violet-100 text-gray-700 p-6 min-h-dvh overflow-y-auto overscroll-contain pb-24',
-            'translate-x-full transition-transform duration-300 ease-in-out',
+            'translate-x-full transition-all duration-400 ease-in-out',
             open && 'translate-x-0'
           )}
         >
@@ -105,7 +105,7 @@ const CertificateButton = () => {
                     sizes='(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw'
                     className='w-full h-auto object-contain'
                   />
-                  <h5 className='text-center text-xl md:text-2xl font-semibold py-2 text-white tracking-wider'>
+                  <h5 className='text-center text-lg md:text-xl font-semibold py-2 text-white tracking-wider'>
                     {item.certificateName}
                   </h5>
                 </a>

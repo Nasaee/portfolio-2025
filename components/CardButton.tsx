@@ -7,7 +7,7 @@ const CardButton = ({
 }: {
   text: string;
   icon: ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
 }) => {
   return (
     <button

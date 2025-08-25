@@ -33,7 +33,7 @@ function HeroSection() {
   const textData = textLang[lang];
 
   return (
-    <section className='h-screen bg-gradient-to-b from-violet-900 to-black  lg:px-24 px-10 relative overflow-hidden'>
+    <section className='h-screen bg-gradient-to-b from-violet-700 to-black/80  lg:px-24 px-10 relative overflow-hidden'>
       <div className='container flex xl:flex-row flex-col-reverse items-center justify-between mx-auto h-full'>
         {/* Left Section */}
         <div className='z-40 xl:mb-0 mb-[20%]'>

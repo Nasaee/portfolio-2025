@@ -46,7 +46,7 @@ const About = () => {
     <div
       id='about'
       ref={sectionRef}
-      className='min-h-screen  overflow-hidden bg-gradient-to-b from-black to-[#9a74cf50] pb-36'
+      className='min-h-screen  overflow-hidden bg-gradient-to-b from-black to-black pb-36 pt-8'
     >
       <SectionTitle
         sectionRef={sectionRef}
