@@ -57,10 +57,7 @@ function Navbar() {
                 damping: 20,
                 delay: 0.7 + index * 0.2,
               }}
-              className='relative text-gray-800 dark:text-gray-200
-    hover:bg-gradient-to-r hover:from-[#5f3dc4] hover:via-[#ae67fa] hover:to-[#f49867]
-    hover:bg-clip-text hover:text-transparent
-    font-medium transition-colors duration-300 group'
+              className='relative text-gray-200 hover:bg-gradient-to-r hover:from-[#5f3dc4] hover:via-[#ae67fa] hover:to-[#f49867] hover:bg-clip-text hover:text-transparent font-medium transition-colors duration-300 group'
               href={`#${item.toId}`}
             >
               {item.name}
