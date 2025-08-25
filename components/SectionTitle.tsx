@@ -10,6 +10,8 @@ interface SectionTitleProps {
   text: string;
   containerClassName?: string;
   textClassName?: string;
+  // ถ้าอยากให้เล่นครั้งเดียว ใส่ true (ค่าเริ่มต้น false)
+  once?: boolean;
 }
 
 function SectionTitle({
@@ -17,35 +19,45 @@ function SectionTitle({
   text,
   containerClassName,
   textClassName,
+  once = false,
 }: SectionTitleProps) {
   const titleRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    gsap.fromTo(
-      titleRef.current,
-      { y: 50, opacity: 0 },
+    // จับค่าปัจจุบันของ ref ไว้ในตัวแปรโลคัล (แก้ ESLint warning)
+    const titleEl = titleRef.current;
+    const triggerEl = sectionRef.current;
 
+    if (!titleEl || !triggerEl) return;
+
+    const tween = gsap.fromTo(
+      titleEl,
+      { y: 50, opacity: 0 },
       {
         y: 0,
         opacity: 1,
         duration: 0.8,
         scrollTrigger: {
-          trigger: sectionRef.current,
+          trigger: triggerEl,
           start: 'top 70%',
-          toggleActions: 'play none none reverse',
+          toggleActions: once
+            ? 'play none none none'
+            : 'play none none reverse',
+          once, // ถ้า true จะทำลาย trigger ให้อัตโนมัติหลังเล่น
         },
       }
     );
+
     return () => {
-      ScrollTrigger.getAll().forEach((trigger) => {
-        if (trigger.vars.trigger === sectionRef.current) {
-          trigger.kill();
-        }
-      });
+      // ใช้ตัวแปรโลคัล ไม่อ้างอิง sectionRef.current ใน cleanup
+      tween?.scrollTrigger?.kill();
+      tween?.kill();
     };
-  }, [sectionRef]);
+    // พอ: เราผูกกับ element เดียวผ่าน sectionRef เท่านั้น
+  }, [sectionRef, once]);
+
   return (
     <div
       className={cn(
