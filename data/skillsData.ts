@@ -32,6 +32,7 @@ import {
   vpsImg,
   goImg,
   ginImg,
+  redisImg,
 
   // goImg,
 } from '../assets/skills';
@@ -213,6 +214,12 @@ const learning = [
     skillName: 'Gin',
     skillIcon: ginImg,
     link: 'https://gin-gonic.com',
+  },
+  {
+    id: nanoid(),
+    skillName: 'Redis',
+    skillIcon: redisImg,
+    link: 'https://redis.io/',
   },
 ];
 

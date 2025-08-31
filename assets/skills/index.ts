@@ -33,6 +33,7 @@ import nginxImg from './nginx.png';
 import vpsImg from './vps.png';
 import goImg from './go.png';
 import ginImg from './gin.webp';
+import redisImg from './redis.svg';
 
 export {
   skillsImg,
@@ -70,4 +71,5 @@ export {
   nginxImg,
   vpsImg,
   ginImg,
+  redisImg,
 };
