@@ -20,13 +20,13 @@ const ProjectCard = ({
           alt={title}
           width={img.width}
           height={img.height}
-          className='h-[70%]'
+          className='h-[70%] w-full object-cover'
         />
-        <div className='flex flex-wrap items-start gap-3 h-[30%] p-5 bg-gradient-to-br from-violet-700 to-violet-900'>
+        <div className='flex flex-wrap items-start gap-3 h-[30%] p-5 bg-gradient-to-br from-violet-700 to-violet-900 overflow-y-auto'>
           {technology.map((tech) => (
             <p
               key={tech}
-              className='text-lg text-violet-700 font-semibold py-1 px-3 rounded-2xl bg-gray-50 shadow-sm'
+              className='text-md text-violet-700 font-semibold py-1 px-3 rounded-2xl bg-gray-50 shadow-sm'
             >
               {tech}
             </p>
