@@ -4,6 +4,7 @@ import {
   futuregedgetsImg,
   portfolioImg,
   techHubImg,
+  bookishImg,
 } from '@/assets/projects';
 import { nanoid } from 'nanoid';
 import { StaticImageData } from 'next/image';
@@ -93,7 +94,7 @@ export const projects: Project[] = [
       'Bookish is a web application built to help manage a collection of Thai books that the developer has already purchased, with features for rating and recording details to avoid duplicate purchases and to easily track which books are already owned.',
     infoTh:
       'Bookish เป็นเว็บแอปพลิเคชันที่สร้างขึ้นเพื่อช่วยจัดการคลังหนังสือภาษาไทยที่ผู้พัฒนาได้ซื้อแล้ว พร้อมระบบการให้คะแนนและบันทึกข้อมูล เพื่อหลีกเลี่ยงการซื้อซ้ำ และช่วยให้สามารถติดตามว่ามีหนังสืออะไรอยู่ในครอบครองแล้วบ้าง',
-    img: claimTracking,
+    img: bookishImg,
     technology: ['Flutter', 'GO Router', 'SQFLITE'],
   },
 ];
