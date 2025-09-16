@@ -97,4 +97,23 @@ export const projects: Project[] = [
     img: bookishImg,
     technology: ['Flutter', 'GO Router', 'SQFLITE'],
   },
+  {
+    id: nanoid(),
+    title: 'Portfolio-2025 by Nasaee',
+    sourceCode: 'https://github.com/Nasaee/portfolio-2025',
+    url: 'https://nasaee-portfolio.netlify.app',
+    infoEng:
+      'A modern, clean, responsive portfolio built with Next.js/TypeScript to showcase my work, skills, and projects.',
+    infoTh:
+      'พอร์ตโฟลิโอที่ทันสมัย สะอาดตา และรองรับการใช้งานบนอุปกรณ์ทุกขนาด สร้างด้วย Next.js/TypeScript เพื่อแสดงผลงาน ทักษะ และโปรเจกต์ของผม',
+    img: portfolioImg,
+    technology: [
+      'Next.js',
+      'TypeScript',
+      'TailwindCSS',
+      'zustand',
+      'Framer Motion',
+      'GSAP',
+    ],
+  },
 ];
