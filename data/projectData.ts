@@ -5,6 +5,7 @@ import {
   portfolioImg,
   techHubImg,
   bookishImg,
+  sqlImg,
 } from '@/assets/projects';
 import { nanoid } from 'nanoid';
 import { StaticImageData } from 'next/image';
@@ -115,5 +116,16 @@ export const projects: Project[] = [
       'Framer Motion',
       'GSAP',
     ],
+  },
+  {
+    id: nanoid(),
+    title: 'Job Data Analysis',
+    sourceCode: 'https://github.com/Nasaee/SQL_Project_Data_Job_Analysis',
+    infoEng:
+      'Dive into the data job market! Focusing on data analyst roles, this project explores top-paying jobs, in-demand skills, and where high demand meets high salary in data analytics.',
+    infoTh:
+      'เจาะลึกตลาดงานด้านข้อมูล! โปรเจกต์นี้มุ่งเน้นไปที่บทบาทนักวิเคราะห์ข้อมูล โดยสำรวจงานที่ให้ค่าตอบแทนสูง ทักษะที่เป็นที่ต้องการ และจุดที่ความต้องการสูงมาบรรจบกับเงินเดือนสูงในสายงานวิเคราะห์ข้อมูล',
+    img: sqlImg,
+    technology: ['PostgreSQL', 'DBeaver'],
   },
 ];

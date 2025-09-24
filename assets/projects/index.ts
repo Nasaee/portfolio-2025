@@ -4,6 +4,7 @@ import claimTracking from './claim-tracking.webp';
 import futuregedgetsImg from './futuregedgets.png';
 import bookishImg from './bookish.png';
 import portfolioImg from './portfolio.png';
+import sqlImg from './sql.jpg';
 
 export {
   techHubImg,
@@ -12,4 +13,5 @@ export {
   claimTracking,
   futuregedgetsImg,
   bookishImg,
+  sqlImg,
 };
